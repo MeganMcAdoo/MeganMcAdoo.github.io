@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Video Hero Scroll Transition</title>
+
+  <!-- Font Awesome for Social Media Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     /* Reset & Base Styles */
     * {
@@ -53,6 +57,32 @@
       text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
     }
 
+    .overlay h2 {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    /* Social Links */
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 2rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #FFD700; /* Hover accent color */
+      text-shadow: 0 0 1em #fbe984;
+      transform: scale(1.2);
+    }
+
     /* Content Section */
     .content {
       padding: 100px 20px;
@@ -81,7 +111,14 @@
       Your browser does not support the video tag.
     </video>
     <div class="overlay">
-        <h1>Megan McAdoo</h1>
+        <h1>Megan McAdoo<br></h1>
+        <h2>Dancer Singer Choreographer</h2>
+        <div class="social-links">
+          <a href="https://www.youtube.com/@megan.mcadoo" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/megan.mcadoo/?next=%2F" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:meganmcadoodancer@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+          <a href="/resources/Megan McAdoo.vcf" target="_blank"><i class="fas fa-phone"></i></a>
+        </div>
     </div>
   </section>
 
@@ -123,3 +160,4 @@
 
 </body>
 </html>
+
