@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Hero Scroll Transition</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: -1;
+      transition: opacity 0.3s ease;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .overlay h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+    }
+
+    /* Content Section */
+    .content {
+      padding: 100px 20px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Video Hero Section -->
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="/resources/Megan McAdoo - Dance Reel.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay">
+        <h1>Megan McAdoo</h1>
+    </div>
+  </section>
+
+  <!-- Text Content Section -->
+  <section class="content">
+    <h2>About Us</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec
+      lacinia lorem. Vivamus in augue non libero consequat dapibus. Proin
+      facilisis, magna id scelerisque porta, lacus augue bibendum urna, vel
+      gravida elit lorem nec lorem. Sed imperdiet mauris eu dolor accumsan
+      ultrices.
+    </p>
+    <p>
+      Aliquam erat volutpat. Sed sed arcu nec augue convallis pulvinar. In hac
+      habitasse platea dictumst. Curabitur et ultrices nisi, id facilisis
+      ligula. Pellentesque ac ante sed justo tempor pretium.
+    </p>
+  </section>
+
+  <!-- Fade Out on Scroll Script -->
+  <script>
+    window.addEventListener('scroll', function () {
+      const video = document.querySelector('.hero video');
+      const overlay = document.querySelector('.overlay');
+      const scrollY = window.scrollY;
+
+      const fadePoint = 300; // Distance to fade out
+
+      const opacity = Math.max(1 - scrollY / fadePoint, 0);
+      video.style.opacity = opacity;
+      overlay.style.opacity = opacity;
+    });
+  </script>
+
+</body>
+</html>
